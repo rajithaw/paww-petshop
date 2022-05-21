@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "name": "Dog food \"Liven\" - Junior version",
+        "price": 25.98,
+        "quantity": "250g",
+        "image": "/images/prod1.png"
+    },
+    {
+        "id": 2,
+        "name": "Dog food \"Liven\" - Premium version",
+        "price": 30.15,
+        "quantity": "250g",
+        "image": "/images/prod2.png"
+    },
+    {
+        "id": 3,
+        "name": "Dog food \"Liven\" - Adulto version",
+        "price": 32.54,
+        "quantity": "250g",
+        "image": "/images/prod3.png"
+    },
+    {
+        "id": 4,
+        "name": "Dog food \"Liven\" - Junior version",
+        "price": 25.98,
+        "quantity": "250g",
+        "image": "/images/prod1.png"
+    },
+    {
+        "id": 5,
+        "name": "Dog food \"Liven\" - Premium version",
+        "price": 30.15,
+        "quantity": "250g",
+        "image": "/images/prod2.png"
+    },
+    {
+        "id": 6,
+        "name": "Dog food \"Liven\" - Adulto version",
+        "price": 32.54,
+        "quantity": "250g",
+        "image": "/images/prod3.png"
+    },
+    {
+        "id": 7,
+        "name": "Dog food \"Liven\" - Junior version",
+        "price": 25.98,
+        "quantity": "250g",
+        "image": "/images/prod1.png"
+    },
+    {
+        "id": 8,
+        "name": "Dog food \"Liven\" - Premium version",
+        "price": 30.15,
+        "quantity": "250g",
+        "image": "/images/prod2.png"
+    },
+    {
+        "id": 9,
+        "name": "Dog food \"Liven\" - Adulto version",
+        "price": 32.54,
+        "quantity": "250g",
+        "image": "/images/prod3.png"
+    },
+    {
+        "id": 10,
+        "name": "Dog food \"Liven\" - Junior version",
+        "price": 25.98,
+        "quantity": "250g",
+        "image": "/images/prod1.png"
+    },
+    {
+        "id": 11,
+        "name": "Dog food \"Liven\" - Premium version",
+        "price": 30.15,
+        "quantity": "250g",
+        "image": "/images/prod2.png"
+    },
+    {
+        "id": 12,
+        "name": "Dog food \"Liven\" - Adulto version",
+        "price": 32.54,
+        "quantity": "250g",
+        "image": "/images/prod3.png"
+    }
+]

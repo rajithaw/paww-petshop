@@ -10,65 +10,65 @@ import { AnimalDog } from "@styled-icons/fluentui-system-filled/AnimalDog";
 import NavigationButton from "./NavigationButton";
 
 const NavigationContainerStyled = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  .logoContainer {
     display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    > svg {
+      color: ${color.primary};
+      width: 36px;
+      height: 36px;
+    }
+  }
+  .commonButtonsContainer {
     flex: 1;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .exitButtonContainer {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+  }
+  @media ${device.tablet} {
+    flex-direction: row;
     .logoContainer {
-        display: flex;
-        height: 100px;
-        justify-content: center;
-        align-items: center;
-        > svg {
-            color: ${color.primary};
-            width: 36px;
-            height: 36px;
-        }
+      display: none;
     }
     .commonButtonsContainer {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+      flex-direction: row;
     }
     .exitButtonContainer {
-        display: flex;
-        height: 200px;
-        align-items: center;
-        justify-content: center;
+      width: 150px;
+      height: auto;
     }
-    @media ${device.tablet} {
-        flex-direction: row;
-        .logoContainer {
-            display: none;
-        }
-        .commonButtonsContainer {
-            flex-direction: row;
-        }
-        .exitButtonContainer {
-            width: 150px;
-            height: auto;
-        }
-    }
+  }
 `;
 
 const NavigationContainer = () => {
-    return (
-        <NavigationContainerStyled>
-            <div className="logoContainer">
-                <AnimalDog />
-            </div>
-            <div className="commonButtonsContainer">
-                <NavigationButton icon={<HomeFill />} />
-                <NavigationButton icon={<LayoutGrid />} selected={true} />
-                <NavigationButton icon={<PieChart />} />
-                <NavigationButton icon={<Settings />} />
-            </div>
-            <div className="exitButtonContainer">
-                <NavigationButton icon={<Exit />} />
-            </div>
-        </NavigationContainerStyled>
-    );
+  return (
+    <NavigationContainerStyled>
+      <div className="logoContainer">
+        <AnimalDog />
+      </div>
+      <div className="commonButtonsContainer">
+        <NavigationButton icon={<HomeFill />} />
+        <NavigationButton icon={<LayoutGrid />} selected={true} />
+        <NavigationButton icon={<PieChart />} />
+        <NavigationButton icon={<Settings />} />
+      </div>
+      <div className="exitButtonContainer">
+        <NavigationButton icon={<Exit />} />
+      </div>
+    </NavigationContainerStyled>
+  );
 };
 
 export default NavigationContainer;
