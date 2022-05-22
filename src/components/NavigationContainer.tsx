@@ -59,13 +59,13 @@ const NavigationContainer = () => {
         <AnimalDog />
       </div>
       <div className="commonButtonsContainer">
-        <NavigationButton icon={<HomeFill />} />
-        <NavigationButton icon={<LayoutGrid />} selected={true} />
-        <NavigationButton icon={<PieChart />} />
-        <NavigationButton icon={<Settings />} />
+        <NavigationButton icon={<HomeFill />} tooltip="Home" />
+        <NavigationButton icon={<LayoutGrid />} selected={true} tooltip="Contents" />
+        <NavigationButton icon={<PieChart />} tooltip="Charts" />
+        <NavigationButton icon={<Settings />} tooltip="Settings" />
       </div>
       <div className="exitButtonContainer">
-        <NavigationButton icon={<Exit />} />
+        <NavigationButton icon={<Exit />} tooltip="Exit" />
       </div>
     </NavigationContainerStyled>
   );

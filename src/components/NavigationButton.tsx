@@ -4,6 +4,7 @@ import IconButton from "./IconButton";
 
 interface INavigationButtonProps {
   selected?: boolean;
+  tooltip?: string;
   icon: any;
 }
 const NavigationButtonStyled = styled("span")<{ selected: boolean }>`
@@ -19,10 +20,11 @@ const NavigationButtonStyled = styled("span")<{ selected: boolean }>`
 const NavigationButton = ({
   icon,
   selected = false,
+  tooltip
 }: INavigationButtonProps) => {
   return (
     <NavigationButtonStyled selected={selected}>
-      <IconButton icon={icon} />
+      <IconButton icon={icon} tooltip={tooltip}/>
     </NavigationButtonStyled>
   );
 };

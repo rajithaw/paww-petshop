@@ -93,13 +93,20 @@ export const selectCartSubtotal = (state: RootState) => {
   return result;
 };
 
-export const selectDiscount = (state: RootState) => state.cart.discount;
+export const selectCartDiscount = (state: RootState) => state.cart.discount;
+
+export const selectCartSalesTax = (state: RootState) => {
+  const subTotal = selectCartSubtotal(state);
+
+  return (subTotal * state.cart.salesTaxPercentage) / 100;
+};
 
 export const selectCartTotal = (state: RootState) => {
   const subTotal = selectCartSubtotal(state);
-  const discount = selectDiscount(state);
+  const discount = selectCartDiscount(state);
+  const salesTax = selectCartSalesTax(state);
 
-  return subTotal - discount + (subTotal * state.cart.salesTaxPercentage) / 100;
+  return subTotal - discount + salesTax;
 };
 
 export default cartSlice.reducer;

@@ -3,12 +3,14 @@ import { color } from "../constants";
 import { MouseEventHandler } from "react";
 
 interface IIconButtonProps {
+  children?: any;
   icon: any;
   tooltip?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const IconButtonStyled = styled.button`
+const IconButtonStyled = styled("button")<{ tooltip?: string }>`
+  area-label: ${props => props.tooltip};
   width: 36px;
   height: 36px;
   border: none;
@@ -20,10 +22,11 @@ const IconButtonStyled = styled.button`
   }
 `;
 
-const IconButton = ({ icon, tooltip, onClick }: IIconButtonProps) => {
+const IconButton = ({ children, icon, tooltip, onClick }: IIconButtonProps) => {
   return (
     <IconButtonStyled onClick={onClick} title={tooltip}>
       {icon}
+      {children}
     </IconButtonStyled>
   );
 };

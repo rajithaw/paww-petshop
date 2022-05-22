@@ -5,8 +5,9 @@ import { Options } from "@styled-icons/fluentui-system-regular/Options";
 import { Cart } from "@styled-icons/bootstrap/Cart";
 import IconButton from "../components/IconButton";
 
-import { useAppDispatch } from "../data/hooks";
-import { openCart } from "../data/cartSlice";
+import { useAppDispatch, useAppSelector } from "../data/hooks";
+import { openCart, selectCartSize } from "../data/cartSlice";
+import BadgeButton from "../components/BadgeButton";
 
 const MainHeaderStyled = styled.header`
   box-sizing: border-box;
@@ -61,6 +62,7 @@ const MainHeaderStyled = styled.header`
 `;
 
 const MainHeader = () => {
+  const cartSize = useAppSelector(selectCartSize);
   const dispatch = useAppDispatch();
 
   return (
@@ -72,9 +74,13 @@ const MainHeader = () => {
       <div className="headerItemSearch">
         <SearchInput placeholder="Search product..." />
         <div className="optionsButtonContainer">
-          <IconButton icon={<Options />} />
+          <IconButton icon={<Options />} tooltip="Options" />
         </div>
-        <IconButton icon={<Cart />} onClick={() => dispatch(openCart())} />
+        <BadgeButton 
+          icon={<Cart />} 
+          onClick={() => dispatch(openCart())} 
+          badgeText={cartSize > 0 ? cartSize.toString() : ''}
+          tooltip="Cart" />
       </div>
     </MainHeaderStyled>
   );

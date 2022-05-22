@@ -10,8 +10,13 @@ import {
   selectCartOpen,
   selectCartItems,
   selectCartSubtotal,
+  selectCartDiscount,
+  selectCartSalesTax,
+  selectCartTotal
 } from "../data/cartSlice";
 import CartItem from "../components/CartItem";
+import CartTotal from "../components/CartTotal";
+import ActionButton from "../components/ActionButton";
 
 const RightNavigationStyled = styled("div")<{ open: boolean }>`
   background-color: white;
@@ -53,6 +58,11 @@ const RightNavigationStyled = styled("div")<{ open: boolean }>`
     overflow-y: auto;
   }
   .totalContainer {
+    margin: 20px;
+  }
+  .printButtonContainer {
+    display: flex;
+    padding: 20px 20px 40px 20px;
   }
   @media ${device.tablet} {
     width: ${(props) => (props.open ? "100%" : "0")};
@@ -63,6 +73,10 @@ const RightNavigationStyled = styled("div")<{ open: boolean }>`
     .cartHeaderText {
       padding-left: 60px;
     }
+    .printButtonContainer {
+      display: flex;
+      padding: 20px 20px 20px 20px;
+    }
   }
 `;
 
@@ -70,6 +84,9 @@ const RightNavigation = () => {
   const cartOpen = useAppSelector(selectCartOpen);
   const cartItems = useAppSelector(selectCartItems);
   const subTotal = useAppSelector(selectCartSubtotal);
+  const discount = useAppSelector(selectCartDiscount);
+  const salesTax = useAppSelector(selectCartSalesTax);
+  const total = useAppSelector(selectCartTotal);
   const dispatch = useAppDispatch();
 
   return (
@@ -83,7 +100,7 @@ const RightNavigation = () => {
         </div>
         <div className="cartHeaderText">Current Order</div>
         <div className="settingsButtonContainer">
-          <IconButton icon={<Settings />} />
+          <IconButton icon={<Settings />} tooltip="Settings" />
         </div>
       </div>
       <div className="cartItemContainer">
@@ -95,8 +112,18 @@ const RightNavigation = () => {
           />
         ))}
       </div>
-      <div className="totalContainer">{subTotal}</div>
+      <div className="totalContainer">
+        <CartTotal 
+            subTotal={subTotal}
+            discount={discount}
+            salesTax={salesTax}
+            total={total}/>
+      </div>
+      <div className="printButtonContainer">
+          <ActionButton text="Print Receipt" />
+      </div>
     </RightNavigationStyled>
   );
 };
+
 export default RightNavigation;
