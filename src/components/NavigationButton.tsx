@@ -1,11 +1,13 @@
+import { ReactElement } from "react";
 import styled from "styled-components";
+import { StyledIcon } from "styled-icons/types";
 import { color } from "../constants";
 import IconButton from "./IconButton";
 
 interface INavigationButtonProps {
   selected?: boolean;
   tooltip?: string;
-  icon: any;
+  icon: ReactElement<StyledIcon>;
 }
 const NavigationButtonStyled = styled("span")<{ selected: boolean }>`
   font-size: 0;

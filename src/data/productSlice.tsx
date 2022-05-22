@@ -11,7 +11,7 @@ export interface IProduct {
 }
 
 export interface ProductState {
-  products: Array<IProduct>;
+  products: IProduct[];
   status: "success" | "loading" | "failed";
 }
 

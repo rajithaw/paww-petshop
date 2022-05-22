@@ -1,16 +1,17 @@
 import styled from "styled-components";
 import { color } from "../constants";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactElement, ReactNode } from "react";
+import { StyledIcon } from "styled-icons/types";
 
 interface IIconButtonProps {
-  children?: any;
-  icon: any;
+  children?: ReactNode;
+  icon: ReactElement<StyledIcon>;
   tooltip?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const IconButtonStyled = styled("button")<{ tooltip?: string }>`
-  area-label: ${props => props.tooltip};
+  area-label: ${(props) => props.tooltip};
   width: 36px;
   height: 36px;
   border: none;

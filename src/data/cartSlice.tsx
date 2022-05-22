@@ -84,7 +84,7 @@ export const selectCartSize = (state: RootState) =>
 export const selectCartSubtotal = (state: RootState) => {
   const cartItems = state.cart.cartItems;
   const result = Object.values(cartItems).reduce(
-    (previousValue: number, currentValue: any) => {
+    (previousValue: number, currentValue: ICartItem) => {
       return previousValue + currentValue.product.price * currentValue.quantity;
     },
     0

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { color } from "../constants";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactElement } from "react";
 import IconButton from "./IconButton";
+import { StyledIcon } from "styled-icons/types";
 
 interface IIconButtonProps {
-  icon: any;
+  icon: ReactElement<StyledIcon>;
   tooltip?: string;
   badgeText?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;

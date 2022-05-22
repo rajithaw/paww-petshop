@@ -1,11 +1,13 @@
+import { ReactElement } from "react";
 import styled from "styled-components";
+import { StyledIcon } from "styled-icons/types";
 import { color, device } from "../constants";
 
 interface ICategoryProps {
   name: string;
   count: number;
   selected?: boolean;
-  icon: any;
+  icon: ReactElement<StyledIcon>;
 }
 
 const CategoryStyled = styled("div")<{ selected: boolean }>`

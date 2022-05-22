@@ -3,9 +3,10 @@ import { color } from "../constants";
 import { MouseEventHandler } from "react";
 import IconButton from "./IconButton";
 import { CartX } from "@styled-icons/bootstrap/CartX";
+import { ICartItem } from "../data/cartSlice";
 
 export interface ICartItemProps {
-  cartItem: any;
+  cartItem: ICartItem;
   onRemoveItem?: MouseEventHandler<HTMLButtonElement>;
 }
 
